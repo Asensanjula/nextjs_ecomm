@@ -1,10 +1,89 @@
 import React from 'react';
+import {Button, Col, Container, Form, Row} from "react-bootstrap";
+import Head from "next/head";
+import Link from "next/link";
+import {useForm} from "react-hook-form";
+import {rules} from "../Utility/formValidations";
 
 const Register = () => {
+    const {register,handleSubmit,errors,watch} = useForm({mode:"all"});
+
+    const onSubmit = (data)=>{
+        console.log("register form data > ", data);
+    }
+
     return (
-        <div>
-            Register
-        </div>
+        <Container>
+            <Head>
+                <title>Register Page | The Shopper</title>
+            </Head>
+            <Row className="my-2">
+                <Col md={{span:6, offset:3}}>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
+                        <Form.Group controlId="name">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="userName"
+                                ref={register(rules().userName)}
+                                isInvalid={errors.userName}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.userName?.message}
+                            </Form.Control.Feedback>
+                        </Form.Group>
+
+                        <Form.Group controlId="email">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control
+                                type="email"
+                                name="email"
+                                ref={register(rules().email)}
+                                isInvalid={errors.email}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.email?.message}
+                            </Form.Control.Feedback>
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Form.Group>
+
+                        <Form.Group controlId="password">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                name="cuPassword"
+                                ref={register(rules().cuPassword)}
+                                isInvalid={errors.cuPassword}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.cuPassword?.message}
+                            </Form.Control.Feedback>
+                        </Form.Group>
+
+                        <Form.Group controlId="confirmPassword">
+                            <Form.Label>Confirm Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                name="cf_password"
+                                ref={register(rules(watch('cuPassword')).cf_password)}
+                                isInvalid={errors.cf_password}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.cf_password?.message}
+                            </Form.Control.Feedback>
+                        </Form.Group>
+
+                        <Button variant="dark" type="submit" block>
+                            Register
+                        </Button>
+                        <p className="my-2">Already have an account? <Link href="/signin"><a style={{color:"crimson"}}>Log In </a></Link> </p>
+                    </Form>
+                </Col>
+            </Row>
+
+        </Container>
     );
 };
 
