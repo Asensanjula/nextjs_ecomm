@@ -10,7 +10,7 @@ export const rules = (values) => {
             maxLength: { value: 50, message: "Number of characters exceeded its specified limit" },
             pattern: { value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, message: "Invalid Email!" }
         },
-        cuPassword: {
+        cu_Password: {
             required: { value: true, message: "Password is Required" },
             maxLength: { value: 8, message: "Number of characters exceeded its specified limit" },
             minLength: { value: 6, message: "The length of the password must be between 8 and 15" },

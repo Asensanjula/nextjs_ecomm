@@ -4,12 +4,20 @@ import Head from "next/head";
 import Link from "next/link";
 import {useForm} from "react-hook-form";
 import {rules} from "../Utility/formValidations";
+import {postData} from "../Utility/fetchData";
 
 const Register = () => {
     const {register,handleSubmit,errors,watch} = useForm({mode:"all"});
 
-    const onSubmit = (data)=>{
+    const onSubmit = async (data)=>{
         console.log("register form data > ", data);
+
+        const res = await postData('auth/register',data);
+        if (res.err){
+            alert(res.err);
+        }else {
+            alert("Success");
+        }
     }
 
     return (
@@ -53,12 +61,12 @@ const Register = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control
                                 type="password"
-                                name="cuPassword"
-                                ref={register(rules().cuPassword)}
-                                isInvalid={errors.cuPassword}
+                                name="cu_Password"
+                                ref={register(rules().cu_Password)}
+                                isInvalid={errors.cu_Password}
                             />
                             <Form.Control.Feedback type="invalid">
-                                {errors.cuPassword?.message}
+                                {errors.cu_Password?.message}
                             </Form.Control.Feedback>
                         </Form.Group>
 
@@ -67,7 +75,7 @@ const Register = () => {
                             <Form.Control
                                 type="password"
                                 name="cf_password"
-                                ref={register(rules(watch('cuPassword')).cf_password)}
+                                ref={register(rules(watch('cu_Password')).cf_password)}
                                 isInvalid={errors.cf_password}
                             />
                             <Form.Control.Feedback type="invalid">
