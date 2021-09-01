@@ -5,18 +5,23 @@ import Link from "next/link";
 import {useForm} from "react-hook-form";
 import {rules} from "../Utility/formValidations";
 import {postData} from "../Utility/fetchData";
+import {useDispatch} from "react-redux";
+import {hideLoader, showLoader} from "../store/reducers/loadingReducer";
 
 const Register = () => {
     const {register,handleSubmit,errors,watch} = useForm({mode:"all"});
+    const dispatch = useDispatch();
 
     const onSubmit = async (data)=>{
         console.log("register form data > ", data);
-
+        dispatch(showLoader());
         const res = await postData('auth/register',data);
         if (res.err){
+            dispatch(hideLoader());
             alert(res.err);
         }else {
-            alert("Success");
+            dispatch(hideLoader());
+            alert("success")
         }
     }
 

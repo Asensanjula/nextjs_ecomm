@@ -2,12 +2,14 @@ import { applyMiddleware,combineReducers, createStore} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createWrapper } from 'next-redux-wrapper';
 import rootSaga from "./sagas";
-import {authReducer} from "./reducers/authReducer";
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+import {authReducer} from "./reducers/authReducer";
+import {loaderReducer} from "./reducers/loadingReducer";
 
 
 const rootReducer = combineReducers({
     auth: authReducer,
+    loader: loaderReducer,
 });
 
 export const makeStore = (context) => {

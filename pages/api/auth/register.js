@@ -19,7 +19,7 @@ const register = async (req,res) => {
         const findUser = await Users.findOne({email});
         if (findUser) return res.status(400).json({err:'This Email already Exists'}); // error handling
         const passwordHash = await bcrypt.hash(cu_Password,12);
-        const newUser = new Users({userName,email,cu_Password:passwordHash,cf_password})
+        const newUser = new Users({userName,email,password:passwordHash,cf_password})
         console.log(newUser);
         await newUser.save();
         res.json({msg:"Register Success"});

@@ -1,8 +1,10 @@
 import { createAction, createReducer } from 'redux-act';
-import { call, put, takeLatest, select } from 'redux-saga/effects';
+
+export const setAuthAction = createAction('AUTH-DATA');
 
 const initialState = {
-    loginSuccess: false,
+    token: null,
+    user:null
 };
 
 /* Sagas */
@@ -12,6 +14,14 @@ export const authRootSaga = function* () {
 
 /* Reducers */
 export const authReducer = createReducer(
-    {},
+    {
+        [setAuthAction]: (state,payload) => {
+            return {
+                ...state,
+                token:payload.token,
+                user:payload.user
+            };
+        },
+    },
     initialState
 );

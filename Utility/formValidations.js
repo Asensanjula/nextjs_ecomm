@@ -12,8 +12,8 @@ export const rules = (values) => {
         },
         cu_Password: {
             required: { value: true, message: "Password is Required" },
-            maxLength: { value: 8, message: "Number of characters exceeded its specified limit" },
-            minLength: { value: 6, message: "The length of the password must be between 8 and 15" },
+            // maxLength: { value: 8, message: "Number of characters exceeded its specified limit" },
+            // minLength: { value: 6, message: "The length of the password must be between 8 and 15" },
         },
         cf_password: {
             required: { value: true, message: "Confirm Password is Required" },
