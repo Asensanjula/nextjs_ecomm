@@ -32,7 +32,7 @@ const signIn = async (req,res) => {
                 refresh_token,
                 access_token,
                 user: {
-                    name: user.name,
+                    name: user.userName,
                     email: user.email,
                     role: user.role,
                     avatar: user.avatar,
