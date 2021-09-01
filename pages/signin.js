@@ -30,7 +30,7 @@ const SignIn = () => {
                 user:res.user
             }));
             Cookie.set('refreshToken', res.refresh_token, {
-                path: 'api/auth/accessToke',
+                path: 'api/auth/accessToken',
                 expires: 7
             });
 
@@ -39,7 +39,6 @@ const SignIn = () => {
         }
     }
 
-    console.log("err" , errors)
     return (
         <Container>
             <Head>
