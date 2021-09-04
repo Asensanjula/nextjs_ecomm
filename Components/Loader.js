@@ -2,9 +2,7 @@ import React from 'react';
 import {useSelector} from "react-redux";
 
 function Loader(props) {
-    const loading = useSelector(state => state.loader.loading);
     return (
-        loading &&
         <div
             className="position-fixed w-100 h-100 text-center loading"
             style={{background:'#0008',color:'white',top:0, left:0,zIndex:9}}

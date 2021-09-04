@@ -9,21 +9,23 @@ import {hideLoader, showLoader} from "../store/reducers/loadingReducer";
 import {useDispatch} from "react-redux";
 import Cookie from 'js-cookie';
 import {setAuthAction} from "../store/reducers/authReducer";
+import {useRouter} from "next/router";
+import {notify} from "../store/reducers/notifyReducer";
 
 const SignIn = () => {
 
     const {register, handleSubmit,errors,watch} = useForm({mode:"onSubmit"});
     const dispatch = useDispatch();
+    const router = useRouter();
     const onSubmit = async (data) => {
         console.log("login Data > ", data);
-        dispatch(showLoader());
+        dispatch(notify({loading:true}))
         const res = await postData('auth/login', data);
         if (res.err){
-            dispatch(hideLoader());
-            alert(res.err);
+            dispatch(notify({error:"Error in Login"}))
         }else {
-            dispatch(hideLoader());
-            alert("success");
+            dispatch(notify({success:"Login Success!"}))
+            router.push("/");
 
             dispatch(setAuthAction({
                 token:res.access_token,

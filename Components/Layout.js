@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import {Container} from "react-bootstrap";
 import Loader from "./Loader";
 import Head from "next/head";
+import Notify from "./Notify";
 
 function Layout({children}) {
     return (
@@ -10,7 +11,7 @@ function Layout({children}) {
             <Head>
                 <title>The Shopper</title>
             </Head>
-            <Loader/>
+            <Notify/>
             <NavBar/>
             {children}
         </Container>

@@ -5,11 +5,13 @@ import rootSaga from "./sagas";
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import {authReducer} from "./reducers/authReducer";
 import {loaderReducer} from "./reducers/loadingReducer";
+import {notifyReducer} from "./reducers/notifyReducer";
 
 
 const rootReducer = combineReducers({
     auth: authReducer,
     loader: loaderReducer,
+    notify: notifyReducer,
 });
 
 export const makeStore = (context) => {
