@@ -18,6 +18,7 @@ function Notify(props) {
                     msg={notifyState.error}
                     handleClose={()=> dispatch(notify({}))}
                     bgColor="bg-danger"
+                    iconName="exclamation-circle"
                 />
             }
             {
@@ -27,6 +28,7 @@ function Notify(props) {
                     msg={notifyState.success}
                     handleClose={()=> dispatch(notify({}))}
                     bgColor="bg-success"
+                    iconName="check-circle"
                 />
             }
         </>

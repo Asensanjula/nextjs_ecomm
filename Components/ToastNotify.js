@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Toast} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-function ToastNotify({title,msg,handleClose, bgColor}) {
+function ToastNotify({title,msg,handleClose, bgColor, iconName}) {
     const [show, setShow] = useState(true);
 
     const closeAction = () =>{
@@ -26,7 +26,7 @@ function ToastNotify({title,msg,handleClose, bgColor}) {
             onClose={closeAction}
         >
             <Toast.Header  className={`${bgColor} text-light`}>
-                <FontAwesomeIcon className="rounded mr-2" icon='shopping-cart' />
+                <FontAwesomeIcon className="rounded mr-2" icon={iconName} />
                 <strong className="mr-auto">{title}</strong>
                 <small>just now</small>
             </Toast.Header>

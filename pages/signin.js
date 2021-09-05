@@ -22,7 +22,7 @@ const SignIn = () => {
         dispatch(notify({loading:true}))
         const res = await postData('auth/login', data);
         if (res.err){
-            dispatch(notify({error:"Error in Login"}))
+            dispatch(notify({error:res.err}))
         }else {
             dispatch(notify({success:"Login Success!"}))
             router.push("/");
