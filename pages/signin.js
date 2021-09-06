@@ -3,9 +3,7 @@ import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import Head from "next/head";
 import Link from "next/link";
 import {useForm} from "react-hook-form";
-import {rules} from "../Utility/formValidations";
 import {postData} from "../Utility/fetchData";
-import {hideLoader, showLoader} from "../store/reducers/loadingReducer";
 import {useDispatch} from "react-redux";
 import Cookie from 'js-cookie';
 import {setAuthAction} from "../store/reducers/authReducer";
@@ -62,7 +60,7 @@ const SignIn = () => {
                                 {errors.email?.message}
                             </Form.Control.Feedback>
                             <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
+                                We&apos;ll never share your email with anyone else.
                             </Form.Text>
                         </Form.Group>
 
@@ -82,7 +80,7 @@ const SignIn = () => {
                         <Button variant="dark" type="submit" block>
                             Login
                         </Button>
-                        <p className="my-2">You don't have an account? <Link href="/register"><a style={{color:"crimson"}}>Register</a></Link> </p>
+                        <p className="my-2">You don&apos;t have an account? <Link href="/register"><a style={{color:"crimson"}}>Register</a></Link> </p>
                     </Form>
                 </Col>
 
