@@ -6,10 +6,10 @@ const connectDB = () => {
         return;
     }
     mongoose.connect(process.env.MONGODB_URL, {
-        // useCreateIndex: true,
-        // useFindAndModify: false,
+        useCreateIndex: true,
+        useFindAndModify: false,
         useNewUrlParser: true,
-        // useUnifiedTopology: true
+        useUnifiedTopology: true
     }, error => {
         if (error) {
             console.log('Error connecting to mongodb')
