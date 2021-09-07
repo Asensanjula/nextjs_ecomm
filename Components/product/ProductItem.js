@@ -32,7 +32,7 @@ function ProductItem({product}) {
                     }
 
                 </div>
-                <Card.Text className="product__description text-justify flex-fill">{product.description}</Card.Text>
+                <Card.Text className="product__description text-left flex-fill">{product.description}</Card.Text>
                 {userLink()}
             </Card.Body>
         </Card>
