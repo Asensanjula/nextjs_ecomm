@@ -2,17 +2,18 @@ import React from 'react';
 import {Button, Card} from "react-bootstrap";
 import Link from "next/link";
 import Row from "react-bootstrap/Row";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 function ProductItem({product}) {
 
     const userLink = () => {
         return (
             <div className="d-flex justify-content-between">
-                <Link href={`product/${product._id}`}>
-                    <a className="btn btn-info mr-1 flex-fill">View</a>
-                </Link>
-                <Button variant="primary" className="ml-1 flex-fill">
-                    Buy
+                {/*<Link href={`product/${product._id}`}>*/}
+                {/*    <a className="btn btn-info mr-1 flex-fill">View</a>*/}
+                {/*</Link>*/}
+                <Button variant="info" className="flex-fill">
+                    <FontAwesomeIcon icon='shopping-cart'/> Add to Cart
                 </Button>
             </div>
         )
