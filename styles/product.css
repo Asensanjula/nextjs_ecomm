@@ -9,7 +9,7 @@
     transform: scale(1.03);
 }
 .productCard .card-img-top {
-    height: 250px;
+    height: 150px;
     object-fit: contain;
 
 }

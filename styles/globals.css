@@ -16,5 +16,6 @@ a {
 }
 
 /*---------------Loading Css*/
+@import url("./navbar.css");
 @import url("./loading.css");
 @import url("./product.css");

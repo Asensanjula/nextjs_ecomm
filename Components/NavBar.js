@@ -7,6 +7,7 @@ import {logOutAction} from "../store/reducers/authReducer";
 
 function NavBar(props) {
     const user = useSelector(state => state.auth.user);
+    const cart = useSelector(state => state.cart);
     const dispatch = useDispatch();
     const handleLogout = () => {
         dispatch(logOutAction());
@@ -17,9 +18,15 @@ function NavBar(props) {
             <Navbar.Toggle/>
             <Navbar.Collapse className="justify-content-end">
                 <Nav>
-                    <Link href="/cart" passHref><Nav.Link>
-                        <FontAwesomeIcon icon='shopping-cart' /> Cart
-                    </Nav.Link></Link>
+                    <Link href="/cart" passHref>
+                        <Nav.Link className="cart">
+                            <div className="cart-Icon">
+                                <FontAwesomeIcon icon='shopping-cart'/>
+                                <span className="cart-notification">{cart.length}</span>
+                            </div>
+                            <span>Cart</span>
+                        </Nav.Link>
+                    </Link>
                     {
                         !user &&
                         <Link href="/signin" passHref><Nav.Link>

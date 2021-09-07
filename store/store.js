@@ -6,12 +6,14 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import {authReducer} from "./reducers/authReducer";
 import {loaderReducer} from "./reducers/loadingReducer";
 import {notifyReducer} from "./reducers/notifyReducer";
+import {cartReducer} from "./reducers/cartReducer";
 
 
 const rootReducer = combineReducers({
     auth: authReducer,
     loader: loaderReducer,
     notify: notifyReducer,
+    cart: cartReducer,
 });
 
 export const makeStore = (context) => {
