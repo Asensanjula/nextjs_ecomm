@@ -25,7 +25,7 @@ const Cart = () => {
             <Card.Img variant="top" src="/images/emptyCart.svg" />
             <Card.Body className="d-flex flex-column">
                 <Card.Title className="text-capitalize text-center">Empty Cart</Card.Title>
-                <Card.Text className="emptyCard__text text-center flex-fill text-secondary">Your shopping cart is empty.</Card.Text>
+                <Card.Text className="emptyCard__text text-center flex-fill">Your shopping cart is empty.</Card.Text>
                 <div className="d-flex justify-content-between">
                     <Link href="/"><Button variant="info" className="flex-fill">
                         Continue Shopping
