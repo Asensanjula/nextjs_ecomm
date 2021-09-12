@@ -3,22 +3,16 @@ import {Button, Card} from "react-bootstrap";
 import Link from "next/link";
 import Row from "react-bootstrap/Row";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useDispatch} from "react-redux";
+import {addToCartAction} from "../../store/reducers/cartReducer";
 
 function ProductItem({product}) {
 
-    const userLink = () => {
-        return (
-            <div className="d-flex justify-content-between">
-                {/*<Link href={`product/${product._id}`}>*/}
-                {/*    <a className="btn btn-info mr-1 flex-fill">View</a>*/}
-                {/*</Link>*/}
-                <Button variant="info" className="flex-fill">
-                    <FontAwesomeIcon icon='shopping-cart'/> Add to Cart
-                </Button>
-            </div>
-        )
-    };
+    const dispatch = useDispatch();
 
+    const handleAddToCart = () => {
+        dispatch(addToCartAction(product));
+    }
     return (
         <Card className="productCard">
             <Card.Img variant="top" src={product.images[0].url} />
@@ -34,7 +28,14 @@ function ProductItem({product}) {
 
                 </div>
                 <Card.Text className="product__description text-left flex-fill">{product.description}</Card.Text>
-                {userLink()}
+                <div className="d-flex justify-content-between">
+                    {/*<Link href={`product/${product._id}`}>*/}
+                    {/*    <a className="btn btn-info mr-1 flex-fill">View</a>*/}
+                    {/*</Link>*/}
+                    <Button variant="info" className="flex-fill" onClick={handleAddToCart}>
+                        <FontAwesomeIcon icon='shopping-cart'/> Add to Cart
+                    </Button>
+                </div>
             </Card.Body>
         </Card>
     );

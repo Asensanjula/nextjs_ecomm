@@ -2,13 +2,14 @@ import { createAction, createReducer } from 'redux-act';
 import {put, takeLatest} from "@redux-saga/core/effects";
 
 export const addToCartAction = createAction('ADD-CART');
-// export const logOutAction = createAction('LOGOUT-ACTION');
+
+export const setToCartAction = createAction('SET-CART-ACTION');
 
 const initialState = [];
 
-const addToCartSaga = function* () {
+const addToCartSaga = function* (action) {
     try {
-
+        console.log("addToCart Action ",action);
     }
     catch (e) {
         console.log("Something went Wrong!")
