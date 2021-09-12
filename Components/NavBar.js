@@ -7,8 +7,10 @@ import {logOutAction} from "../store/reducers/authReducer";
 
 function NavBar(props) {
     const user = useSelector(state => state.auth.user);
-    const cart = useSelector(state => state.cart);
+    const cartList = useSelector(state => state.cart.itemList);
     const dispatch = useDispatch();
+    console.log("Cart Update >>> ", cartList);
+    console.log("user Update >>> ", user);
     const handleLogout = () => {
         dispatch(logOutAction());
     }
@@ -22,7 +24,7 @@ function NavBar(props) {
                         <Nav.Link className="cart">
                             <div className="cart-Icon">
                                 <FontAwesomeIcon icon='shopping-cart'/>
-                                <span className="cart-notification">{cart.length}</span>
+                                <span className="cart-notification">{cartList?.length}</span>
                             </div>
                             <span>Cart</span>
                         </Nav.Link>

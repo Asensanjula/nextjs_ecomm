@@ -8,7 +8,7 @@ const Cart = () => {
     const cart = useSelector(state => state.cart);
 
     return (
-        cart.length === 0 &&
+        cart.itemList.length === 0 &&
         // <div className="cart__empty">
         //     <div className="cart__icon d-flex justify-content-center">
         //         <img className="cart__emptyImage " src="/images/emptyCart.svg" alt="empty-image-cart"/>
