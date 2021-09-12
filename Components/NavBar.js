@@ -13,7 +13,7 @@ function NavBar(props) {
         dispatch(logOutAction());
     }
     return (
-        <Navbar bg="white"  expand="lg">
+        <Navbar collapseOnSelect bg="white"  expand="lg">
             <Link href="/" passHref><Navbar.Brand>The Shopper</Navbar.Brand></Link>
             <Navbar.Toggle/>
             <Navbar.Collapse className="justify-content-end">
