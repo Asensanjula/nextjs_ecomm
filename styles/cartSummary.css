@@ -1,0 +1,25 @@
+.cart-summary{
+    background: #d1d1d1;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.15);
+}
+
+.summary_detail p{
+    font-size: 14px;
+    font-weight: 500;
+    color: #393939;
+    /*margin:0;*/
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.totalAmount{
+    background: #5a5a5a;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.15);
+
+}
+
+.totalAmount p{
+    margin: 0;
+}

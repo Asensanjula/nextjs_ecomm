@@ -4,6 +4,7 @@ import Link from "next/link";
 import {useSelector} from "react-redux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CartItem from "../Components/Cart/CartItem";
+import CartSummaryPanel from "../Components/Cart/CartSummaryPanel";
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
@@ -30,7 +31,7 @@ const Cart = () => {
             {
                 cart.itemList.length > 0 &&
                 <Row className="my-2">
-                    <Col md={8}>
+                    <Col  md={8}>
                         <Table  hover borderless responsive className="cartItemTable border-bottom">
                             <thead>
                             <tr >
@@ -50,7 +51,9 @@ const Cart = () => {
                             </tbody>
                         </Table>
                     </Col>
-                    <Col xs={6} md={4}></Col>
+                    <Col  md={4}>
+                        <CartSummaryPanel/>
+                    </Col>
                 </Row>
 
             }
