@@ -16,7 +16,15 @@ function NavBar(props) {
     }
     return (
         <Navbar sticky="top" collapseOnSelect bg="white"  expand="lg">
-            <Link href="/" passHref><Navbar.Brand className="order-lg-0">The Shopper</Navbar.Brand></Link>
+            <Link href="/" passHref><Navbar.Brand className="order-lg-0">
+                <img
+                    src="/images/logo.svg"
+                    width="180"
+                    height="35"
+                    className="d-inline-block align-top"
+                    alt="React Bootstrap logo"
+                />
+            </Navbar.Brand></Link>
             <Nav className="d-flex order-lg-1 ml-auto pr-2 pr-lg-0">
                 <Link href="/cart" passHref>
                     <Nav.Link className="cart">

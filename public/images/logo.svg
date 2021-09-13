@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="40" viewBox="0 0 250 40">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 37.5px;
+        fill: #256884;
+        font-family: "Butler Stencil";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text id="Shopper" class="cls-1" transform="translate(50.365 28.53) scale(0.959)">Shopper</text>
+</svg>
