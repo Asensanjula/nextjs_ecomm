@@ -56,6 +56,16 @@
     /*height: 75%;*/
 }
 
+.cartItemTable tbody{
+    font-size: 14px;
+    color: #424242;
+    font-weight: 500;
+}
+
+.cartItemTable thead{
+    font-size: 15px;
+}
+
 
 @media only screen and (max-width: 576px) {
     .cart__emptyImage{

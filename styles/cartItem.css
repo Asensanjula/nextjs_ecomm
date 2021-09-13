@@ -1,0 +1,6 @@
+.cart-item__img{
+    height: 65px;
+    object-fit: contain;
+    width: 20%;
+
+}
