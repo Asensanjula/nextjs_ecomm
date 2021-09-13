@@ -16,7 +16,7 @@ function ToastNotify({title,msg,handleClose, bgColor, iconName}) {
                 top: 50,
                 right:20,
                 minWidth:"280px",
-                zIndex:10
+                zIndex:1021
             }}
             show={show}
             delay={3000}

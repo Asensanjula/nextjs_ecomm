@@ -15,20 +15,22 @@ function NavBar(props) {
         dispatch(logOutAction());
     }
     return (
-        <Navbar collapseOnSelect bg="white"  expand="lg">
-            <Link href="/" passHref><Navbar.Brand>The Shopper</Navbar.Brand></Link>
+        <Navbar sticky="top" collapseOnSelect bg="white"  expand="lg">
+            <Link href="/" passHref><Navbar.Brand className="order-lg-0">The Shopper</Navbar.Brand></Link>
+            <Nav className="d-flex order-lg-1 ml-auto pr-2 pr-lg-0">
+                <Link href="/cart" passHref>
+                    <Nav.Link className="cart">
+                        <div className="cart-Icon">
+                            <FontAwesomeIcon icon='shopping-cart'/>
+                            <span className="cart-notification">{cartList?.length}</span>
+                        </div>
+                        <span>Cart</span>
+                    </Nav.Link>
+                </Link>
+            </Nav>
             <Navbar.Toggle/>
             <Navbar.Collapse className="justify-content-end">
                 <Nav>
-                    <Link href="/cart" passHref>
-                        <Nav.Link className="cart">
-                            <div className="cart-Icon">
-                                <FontAwesomeIcon icon='shopping-cart'/>
-                                <span className="cart-notification">{cartList?.length}</span>
-                            </div>
-                            <span>Cart</span>
-                        </Nav.Link>
-                    </Link>
                     {
                         !user &&
                         <Link href="/signin" passHref><Nav.Link>
@@ -38,7 +40,7 @@ function NavBar(props) {
                     {
                         user &&
                         <>
-                            <Nav.Item>
+                            <Nav.Item className="d-none d-sm-block">
                                 <img
                                     src={user.avatar}
                                     alt="user-logo"

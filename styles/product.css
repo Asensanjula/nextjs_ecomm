@@ -19,3 +19,23 @@
     color: #0F1111;
     font-size: 16px;
 }
+
+.quantitySelector button{
+    border-radius: 0;
+    border: none;
+}
+.quantitySelector__qty{
+    background: #138496!important;
+    border: none;
+}
+
+.quantitySelector__plus{
+    border-top-right-radius: 5px!important;
+    border-bottom-right-radius: 5px!important;
+    /*border-radius: 10px!important;*/
+}
+
+.quantitySelector__minus{
+    border-top-left-radius: 5px!important;
+    border-bottom-left-radius: 5px!important;
+}
