@@ -2,14 +2,14 @@
     /*margin-top: 30px;*/
     padding-top: 20px;
     border: none!important;
-    transition: all .2s ease-in-out;
+    /*transition: all .2s ease-in-out;*/
     background: rgb(107 121 135 / 50%)!important;
     height: 75vh;
 }
 
-.emptyCard:hover{
-    transform: scale(1.03);
-}
+/*.emptyCard:hover{*/
+/*    transform: scale(1.03);*/
+/*}*/
 
 .emptyCard .card-title{
     font-size: 2rem;

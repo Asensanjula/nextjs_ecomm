@@ -4,7 +4,8 @@ import Link from "next/link";
 import Row from "react-bootstrap/Row";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useDispatch, useSelector} from "react-redux";
-import {addToCartAction} from "../../store/reducers/cartReducer";
+import {addToCartAction, removeFromCartAction} from "../../store/reducers/cartReducer";
+import {notify} from "../../store/reducers/notifyReducer";
 
 function ProductItem({product}) {
 
@@ -15,7 +16,12 @@ function ProductItem({product}) {
     console.log("Checked > ", checked)
     const handleAddToCart = () => {
         dispatch(addToCartAction({...product,qty:1}));
+        dispatch(notify({success:"Item Added to Cart!"}))
     }
+    const handleRemoveFromCart = () => {
+        dispatch(removeFromCartAction({product: {...product}, type:"ONE"}));
+    }
+
     return (
         <Card className="productCard">
             <Card.Img variant="top" src={product.images[0].url} />
@@ -42,10 +48,10 @@ function ProductItem({product}) {
                 {
                     checked &&
                     <div className="d-flex align-items-baseline quantitySelector">
-                        <Button variant="info" className="flex-fill my-1 quantitySelector__minus"><FontAwesomeIcon
+                        <Button variant="info" className="flex-fill my-1 quantitySelector__minus" onClick={handleRemoveFromCart}><FontAwesomeIcon
                             icon='minus'/></Button>
                         <Button className="flex-fill my-1 quantitySelector__qty" disabled>{checked?.qty}</Button>
-                        <Button variant="info" className="flex-fill my-1 quantitySelector__plus"><FontAwesomeIcon
+                        <Button variant="info" className="flex-fill my-1 quantitySelector__plus" onClick={handleAddToCart}><FontAwesomeIcon
                             icon='plus'/></Button>
                     </div>
                 }

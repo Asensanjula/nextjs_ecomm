@@ -4,3 +4,20 @@
     width: 20%;
 
 }
+
+.itemQty{
+    vertical-align: center;
+}
+
+.itemQty button{
+    font-size: 14px;
+    color: #0F1111;
+}
+
+.itemQty button:hover{
+  color: #0F1111;
+}
+
+.itemQty button:focus{
+    color: #0F1111;
+}
